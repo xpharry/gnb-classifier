@@ -4,9 +4,9 @@ CarND-Term3: Path Planning. A Mini-Project on manually construct a Gaussian Naiv
 ## Problem Overview
 This example is to implement a Gaussian Naive Bayes classifier to predict the behavior of vehicles on a highway. In the image below you can see the behaviors you'll be looking for on a 3 lane highway (with lanes of 4 meter width). The dots represent the d (y axis) and s (x axis) coordinates of vehicles as they either...
 
-change lanes left (shown in blue)
-keep lane (shown in black)
-or change lanes right (shown in red)
+1. change lanes left (shown in blue)
+2. keep lane (shown in black)
+3. or change lanes right (shown in red)
 
 ![image](./trajectory_classifier.png)
 
