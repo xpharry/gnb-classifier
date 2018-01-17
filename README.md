@@ -23,9 +23,11 @@ The lane width is 4 meters (this might be helpful in engineering additional feat
 
 ## Instruction
 
-Implement the `train(self, data, labels)` method in the class `GNB` in `classifier.cpp`.
+Implement the `train(self, data, labels)` method in the class `GNB` in `classifier.cpp` or `classifier.py`.
 
 Training a Gaussian Naive Bayes classifier consists of computing and storing the mean and standard deviation from the data for each label/feature pair. For example, given the label "change lanes left” and the feature s_dot, it would be necessary to compute and store the mean and standard deviation of s_dot over all data points with the "change lanes left” label.
+
+The current solution, with no feature engineering, uses only existing features. There is still room to improve.
 
 ## Other Resources
 
