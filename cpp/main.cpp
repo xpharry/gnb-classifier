@@ -8,48 +8,49 @@ using namespace std;
 
 vector<vector<double> > Load_State(string file_name)
 {
-    ifstream in_state_(file_name.c_str(), ifstream::in);
-    vector< vector<double >> state_out;
-    string line;
+	ifstream in_state_(file_name.c_str(), ifstream::in);
+	vector< vector<double >> state_out;
+	string line;
 
 
-    while (getline(in_state_, line))
-    {
-        istringstream iss(line);
-    	vector<double> x_coord;
+	while (getline(in_state_, line))
+	{
+		istringstream iss(line);
+		vector<double> x_coord;
 
-    	string token;
-    	while( getline(iss,token,','))
-    	{
-    	    x_coord.push_back(stod(token));
-    	}
-    	state_out.push_back(x_coord);
-    }
-    return state_out;
+		string token;
+		while( getline(iss,token,','))
+		{
+			x_coord.push_back(stod(token));
+		}
+		state_out.push_back(x_coord);
+	}
+	return state_out;
 }
+
 vector<string> Load_Label(string file_name)
 {
-    ifstream in_label_(file_name.c_str(), ifstream::in);
-    vector< string > label_out;
-    string line;
-    while (getline(in_label_, line))
-    {
-    	istringstream iss(line);
-    	string label;
-	    iss >> label;
+	ifstream in_label_(file_name.c_str(), ifstream::in);
+	vector< string > label_out;
+	string line;
+	while (getline(in_label_, line))
+	{
+		istringstream iss(line);
+		string label;
+		iss >> label;
 
-	    label_out.push_back(label);
-    }
-    return label_out;
+		label_out.push_back(label);
+	}
+	return label_out;
 
 }
 
 int main() {
 
-    vector< vector<double> > X_train = Load_State("./train_states.txt");
-    vector< vector<double> > X_test  = Load_State("./test_states.txt");
-    vector< string > Y_train  = Load_Label("./train_labels.txt");
-    vector< string > Y_test   = Load_Label("./test_labels.txt");
+	vector< vector<double> > X_train = Load_State("./train_states.txt");
+	vector< vector<double> > X_test  = Load_State("./test_states.txt");
+	vector< string > Y_train  = Load_Label("./train_labels.txt");
+	vector< string > Y_test   = Load_Label("./test_labels.txt");
 
 	cout << "X_train number of elements " << X_train.size() << endl;
 	cout << "X_train element size " << X_train[0].size() << endl;
